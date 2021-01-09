@@ -76,9 +76,9 @@ Array.from(opr).forEach(elements=>{
                 else{
                     sum = sum - Number(input1);
                 }
-                console.log(input1);
+                
                 // sum -= Number(input1);
-                console.log(sum);
+                
                 input1="";
                 inp.value = "";
                 break;
@@ -102,7 +102,8 @@ Array.from(opr).forEach(elements=>{
                 else{
                     sum /= Number(input1);
                 }
-                console.log('divide');
+                
+                
                 
                 input1="";
                 inp.value = "";
@@ -115,7 +116,6 @@ Array.from(opr).forEach(elements=>{
 
 
 eq.onclick = function() {
-    console.log(sum);
     switch(xy)
         {
             case "+" :
@@ -135,13 +135,14 @@ eq.onclick = function() {
                 else{
                     sum = sum - Number(input1);
                 }
-                console.log(input1);
+                
                 // sum -= Number(input1);
-                console.log(sum);
+                
                 input1="";
                 inp.value = "";
                 break;
             case "*" :
+                
                 if(sum==null)
                 {
                     sum = Number(input1);
@@ -149,11 +150,13 @@ eq.onclick = function() {
                 else{
                     sum = sum * Number(input1);
                 }
+                
                 // sum *= Number(input1);
                 input1="";
                 inp.value = "";
                 break;
             case "/" :
+                
                 if(sum==null)
                 {
                     sum = Number(input1);
@@ -161,17 +164,21 @@ eq.onclick = function() {
                 else{
                     sum /= Number(input1);
                 }
-                console.log('divide');
+                
                 
                 input1="";
                 inp.value = "";
                 break;
         }
+        
     inp.value = sum;
+    input1 = sum;
+    sum = null;
+    
 }
 
 cl.onclick = function() {
-    console.log()
+    
     inp.value = "";
     input1 = "";
     sum = null;
