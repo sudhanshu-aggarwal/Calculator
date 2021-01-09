@@ -35,8 +35,7 @@
 
 //         }
 //     }
-// }
-
+// } 
 let num = document.querySelectorAll('.num');
 let inp = document.getElementById('inp');
 let opr = document.querySelectorAll('.opr');
