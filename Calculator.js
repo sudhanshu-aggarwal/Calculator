@@ -44,6 +44,7 @@ let cl = document.getElementById('btn');
 let input1='';
 let sum=null;
 let xy;
+let flag=0;
 Array.from(num).forEach(elements=>{
         elements.addEventListener("click", function(event)
         {
@@ -55,8 +56,11 @@ Array.from(num).forEach(elements=>{
 Array.from(opr).forEach(elements=>{
     elements.addEventListener("click", function(event)
     {
+        
         let a = elements.innerHTML;
-        switch(a)
+        if (flag==0)
+        {
+            switch(a)
         {
             case "+" :
                 // console.log(input1 + "inputb");
@@ -108,6 +112,65 @@ Array.from(opr).forEach(elements=>{
                 inp.value = "";
                 break;
         }
+        flag++;
+        }
+        else{
+            switch(xy)
+        {
+            case "+" :
+                // console.log(input1 + "inputb");
+                sum += Number(input1);
+                input1="";
+                // console.log(input1 + "input");
+                inp.value = "";
+                // console.log(sum);
+                // console.log(inp.value);
+                break;
+            case "-" :
+                if(sum==null)
+                {
+                    sum = Number(input1);
+                }
+                else{
+                    sum = sum - Number(input1);
+                }
+                
+                // sum -= Number(input1);
+                
+                input1="";
+                inp.value = "";
+                break;
+            case "*" :
+                
+                if(sum==null)
+                {
+                    sum = Number(input1);
+                }
+                else{
+                    sum = sum * Number(input1);
+                }
+                
+                // sum *= Number(input1);
+                input1="";
+                inp.value = "";
+                break;
+            case "/" :
+                
+                if(sum==null)
+                {
+                    sum = Number(input1);
+                }
+                else{
+                    sum /= Number(input1);
+                }
+                
+                
+                input1="";
+                inp.value = "";
+                break;
+        }
+        }
+        
         xy = elements.innerHTML;
     })
 });
@@ -169,7 +232,7 @@ eq.onclick = function() {
                 inp.value = "";
                 break;
         }
-        
+    flag = 0;
     inp.value = sum;
     input1 = sum;
     sum = null;
